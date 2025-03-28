@@ -17,7 +17,7 @@
 2. 以 Vite 和 NPM 为例创建一个 Vue3 项目：
 ```bash
 npm create vite@latest
-// 后依次输入项目名,选择Vue 和 JavaScript
+// 后依次输入项目名，选择 Vue 和 JavaScript
 
 cd your-project-name
 npm install
@@ -57,7 +57,7 @@ npm run dev
 ### Props
 | 名称           | 描述                | 类型      | 默认值   |
 |----------------|---------------------|-----------|----------|
-| **action** <span style="display:inline-block; background:#FFECE8; color:#F56C6C; font-size:12px; padding:0 6px; border-radius:3px; font-weight:normal;">required</span> | 请求 URL          | `string`  | #        |
+| **action**  ❗*(required)*          | `string`  | #        |
 | **max-files**  | 允许上传文件的最大数量（设置为1即为单文件上传） | `number`  | 3        |
 | **max-size**  | 允许上传文件的最大大小 (MB) | `number`  | 5        |
 | **allowed-types**  | 允许上传的文件类型 | `array`  | ['image/png', 'application/pdf'] |
@@ -66,7 +66,9 @@ npm run dev
 | **input-width** | 文本框宽度    | `string`  | 350px     |
 
 ### 原生 Attributes 和 Events
-所有 `el-input` 的原生 Attributes 和 Events 均透传到了组合组件中的 `el-input` 元素上，可在父组件中直接使用。以下为默认设定：
+所有 `el-input` 的原生 Attributes 和 Events 均透传到了组合组件中的 `el-input` 元素上，可在父组件中直接使用。
+
+以下为默认设定：
 | 名称        | 描述               | 类型      | 默认值   |
 |-------------|--------------------|-----------|----------|
 | **placeholder** | 输入框占位文本     | `string`  | 未选择文件 |
