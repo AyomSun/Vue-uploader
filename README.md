@@ -57,7 +57,7 @@ npm run dev
 ### Props
 | 名称           | 描述                | 类型      | 默认值   |
 |----------------|---------------------|-----------|----------|
-| **action**  ❗*(required)*          | `string`  | #        |
+| **action**  *(required)* | 请求URL     | `string`  | #        |
 | **max-files**  | 允许上传文件的最大数量（设置为1即为单文件上传） | `number`  | 3        |
 | **max-size**  | 允许上传文件的最大大小 (MB) | `number`  | 5        |
 | **allowed-types**  | 允许上传的文件类型 | `array`  | ['image/png', 'application/pdf'] |
