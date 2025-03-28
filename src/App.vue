@@ -55,6 +55,6 @@
 
 <style scoped>
     .uploader1 {
-        padding: 10px;
+        padding: 20px;
     }
 </style>

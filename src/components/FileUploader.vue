@@ -8,7 +8,9 @@
         maxFiles: {type: Number, default: 3},
         maxSize: {type: Number, default: 3},
         allowedTypes: {type: Array, default: () => ['image/png', 'application/pdf']},
-        action: {type: String, required: true},
+        action: {type: String, required: true, default:"#"},
+        headers: {type: Object, default: {'Content-Type': 'multipart/form-data'}},
+        method: {type: String, default: "post"},
         inputWidth: {type: String, default: "350px"},
     })
 
@@ -122,8 +124,11 @@
     
         try {
             uploading.value = true
-            const response = await axios.post(props.action, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' }
+            const response = await axios({
+                url: props.action, 
+                method: props.method,
+                data: formData, 
+                headers: props.headers
             })
                 
             ElMessage.success('文件上传成功')

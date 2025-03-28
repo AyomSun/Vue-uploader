@@ -61,7 +61,7 @@ npm run dev
 | **max-files**  | 允许上传文件的最大数量（设置为1即为单文件上传） | `number`  | 3        |
 | **max-size**  | 允许上传文件的最大大小 (MB) | `number`  | 5        |
 | **allowed-types**  | 允许上传的文件类型 | `array`  | ['image/png', 'application/pdf'] |
-| **headers**    | 设置上传的请求头部  | `object`  | —        |
+| **headers**    | 设置上传的请求头部  | `object`  | {'Content-Type': 'multipart/form-data'} |
 | **method**     | 设置上传请求方法    | `string`  | post     |
 | **input-width** | 文本框宽度    | `string`  | 350px     |
 
