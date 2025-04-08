@@ -64,7 +64,7 @@ const handleFileSelect = (event) => {
     const selectedFiles = event.target.files
     if (!selectedFiles.length) return
     
-    const newFiles = Array.from(selectedFiles)
+    let newFiles = Array.from(selectedFiles)
     
     if (props.maxFiles != 1) {            
         const remainSlots = props.maxFiles - files.value.length
@@ -94,6 +94,26 @@ const handleFileSelect = (event) => {
     if (props.maxFiles === 1) {
         files.value = newFiles
     } else {
+        // 检查是否有重复文件
+        const duplicates = newFiles.filter(newFile => 
+            files.value.some(existingFile => 
+                existingFile.name === newFile.name
+            )
+        )
+        
+        if (duplicates.length > 0) {
+            const duplicateNames = duplicates.map(f => f.name).join(', ')
+            ElMessage.warning(`已过滤重复文件：${duplicateNames}`)
+            
+            // 过滤掉重复文件
+            newFiles = newFiles.filter(newFile => !duplicates.includes(newFile))
+            
+            if (newFiles.length === 0) {
+                event.target.value = ''
+                return
+            }
+        }
+        
         files.value = [...files.value, ...newFiles]     
     }
 
